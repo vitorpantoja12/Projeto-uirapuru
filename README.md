@@ -1,2 +1,4 @@
 # Projeto de IA
-Testando readme
+
+## Uirapuru IA: Classificador de Espécies de Pássaros da Amazônia utilizando Transfer Learning
+
