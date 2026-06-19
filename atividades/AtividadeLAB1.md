@@ -1,3 +1,5 @@
+# Alunos: João Vitor Pantoja Campos e Yurian Nobre dos Santos
+
 # Atividade LAB 1 — Machine Learning
 
 ---
