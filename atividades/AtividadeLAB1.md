@@ -8,11 +8,11 @@
 
 > Um hospital quer prever se um paciente tem uma doença rara (afeta 2% dos casos) a partir de 30 exames. Falso negativo (não detectar a doença) é catastrófico.
 
-**Técnica/algoritmo:** Modelos de classificação supervisionada, como Regressão Logística ou Random Forest.
+> **Técnica/algoritmo:** Modelos de classificação supervisionada, como Regressão Logística ou Random Forest.
 
-**Métrica de avaliação:** Recall (sensibilidade)
+> **Métrica de avaliação:** Recall (sensibilidade)
 
-**Justificativa:** Como a doença é rara e um falso negativo é muito grave, o objetivo principal é identificar o maior número possível de pacientes doentes. O recall mede exatamente a capacidade do modelo de encontrar os casos positivos.
+> **Justificativa:** Como a doença é rara e um falso negativo é muito grave, o objetivo principal é identificar o maior número possível de pacientes doentes. O recall mede exatamente a capacidade do modelo de encontrar os casos positivos.
 
 ---
 
@@ -20,11 +20,11 @@
 
 > Uma rede de farmácias tem dados de 50 mil clientes (idade, frequência, valor gasto) e quer descobrir grupos naturais de comportamento para campanhas direcionadas. Não há rótulos.
 
-**Técnica/algoritmo:** Algoritmos de agrupamento (clustering), como K-Means.
+> **Técnica/algoritmo:** Algoritmos de agrupamento (clustering), como K-Means.
 
-**Métrica de avaliação:** Método do cotovelo.
+> **Métrica de avaliação:** Método do cotovelo.
 
-**Justificativa:** Não existem rótulos, então trata-se de um problema de aprendizado não supervisionado. O K-Means permite encontrar grupos naturais de clientes com comportamentos semelhantes.
+> **Justificativa:** Não existem rótulos, então trata-se de um problema de aprendizado não supervisionado. O K-Means permite encontrar grupos naturais de clientes com comportamentos semelhantes.
 
 ---
 
@@ -32,11 +32,11 @@
 
 > Uma fintech quer prever o valor (em R$) que um cliente vai gastar no próximo mês, baseado no histórico. A saída é um número contínuo.
 
-**Técnica/algoritmo:** Algoritmos de regressão supervisionada, como o XGBoost Regressor.
+> **Técnica/algoritmo:** Algoritmos de regressão supervisionada, como o XGBoost Regressor.
 
-**Métrica de avaliação:** RMSE (Raiz do Erro Quadrático Médio)
+> **Métrica de avaliação:** RMSE (Raiz do Erro Quadrático Médio)
 
-**Justificativa:** O valor gasto é uma variável contínua, portanto é um problema de regressão. O RMSE mede o erro médio das previsões em relação aos valores reais.
+> **Justificativa:** O valor gasto é uma variável contínua, portanto é um problema de regressão. O RMSE mede o erro médio das previsões em relação aos valores reais.
 
 ---
 
@@ -44,11 +44,11 @@
 
 > Você tem um dataset tabular com 100 mil linhas e 40 colunas para um problema de classificação. Quer a melhor performance possível sem semanas de trabalho.
 
-**Técnica/algoritmo:** Ensemble de árvores (Gradient Boosting), como o XGBoost.
+> **Técnica/algoritmo:** Ensemble de árvores (Gradient Boosting), como o XGBoost.
 
-**Métrica de avaliação:** Acurácia, F1 Score ou ROC-AUC.
+> **Métrica de avaliação:** Acurácia, F1 Score ou ROC-AUC.
 
-**Justificativa:** Modelos baseados em árvores costumam apresentar excelente desempenho em dados tabulares com pouco pré-processamento. Redes neurais geralmente exigem mais dados, ajuste de hiperparâmetros e maior tempo de treinamento.
+> **Justificativa:** Modelos baseados em árvores costumam apresentar excelente desempenho em dados tabulares com pouco pré-processamento. Redes neurais geralmente exigem mais dados, ajuste de hiperparâmetros e maior tempo de treinamento.
 
 ---
 
@@ -56,11 +56,11 @@
 
 > Um modelo de previsão de crédito atinge 99% de acurácia no treino e 68% no teste.
 
-**Técnica/algoritmo:** Por ser um diagnóstico de Overfitting, como técnica para resolver se utilizaria Validação Cruzada.
+> **Técnica/algoritmo:** Por ser um diagnóstico de Overfitting, como técnica para resolver se utilizaria Validação Cruzada.
 
-**Métrica de avaliação:** Acurácia.
+> **Métrica de avaliação:** Acurácia.
 
-**Justificativa:** O modelo aprendeu excessivamente os dados de treino, mas não consegue generalizar para dados novos, o que explica a grande diferença entre as métricas de treino e teste.
+> **Justificativa:** O modelo aprendeu excessivamente os dados de treino, mas não consegue generalizar para dados novos, o que explica a grande diferença entre as métricas de treino e teste.
 
 ---
 
@@ -69,7 +69,7 @@
 ### 2.1 EDA: investiguem os dados. Atenção: há um problema sério escondido — algumas colunas têm valor 0 onde é biologicamente impossível (glicose 0? pressão 0?). Encontrem e tratem. Justifiquem a estratégia.
 
 > O dataset de previsão de diabetes se encontra da seguinte forma antes de qualquer tipo de tratamento, com uma tabela dos dados em si e outra da quantidade de valores em cada coluna.
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 > As colunas de Glicose, PressaoArterial, IMC, EspessuraPele e Insulina tinham zeros impossíveis — ninguém pode ter glicose ou pressão arterial zero e estar vivo. Esses valores representam dados faltantes codificados como zero.
 >
@@ -79,7 +79,7 @@
 
 ### 2.2 Modelagem: treinem no mínimo 3 modelos diferentes com validação cruzada. Lembrem do que aprenderam: alguns precisam de escalonamento, outros não.
 
-![alt text](image-3.png)
+![alt text](images/image-4.png)
 
 > Três modelos diferentes treinados usando cross-validation de 5 folds com a métrica Recall:
 >
@@ -93,9 +93,9 @@
 
 > O melhor modelo foi o Random Forest
 
-![precisão/recall do modelo](image-5.png)
+![precisão/recall do modelo](images/image-5.png)
 
-![matriz de confusão](image-4.png)
+![matriz de confusão](images/image-6.png)
 
 > **Qual erro é mais grave num teste de diabetes?**
 >
@@ -109,7 +109,7 @@
 
 ### 2.4 Interpretação: qual variável mais prediz diabetes? Faz sentido clínico? Escrevam 2-3 frases conectando o resultado do modelo com o mundo real.
 
-![alt text](image-6.png)
+![alt text](images/image-7.png)
 
 > As variáveis mais importantes identificadas pelo modelo foram Glicose, IMC e Histórico Familiar. Esse resultado faz sentido clinicamente, pois a glicose é o principal indicador utilizado no diagnóstico do diabetes, estando diretamente relacionada à doença. O IMC também é um fator relevante, já que o excesso de peso aumenta a resistência à insulina e eleva o risco de desenvolvimento do diabetes tipo 2. Além disso, o histórico familiar reflete a predisposição genética para a doença, sendo um fator de risco amplamente reconhecido pela literatura médica.
 
@@ -121,7 +121,7 @@
 
 ### 3.1 Apliquem o método do cotovelo. Quantos grupos os dados sugerem? Justifiquem com o gráfico.
 
-![alt text](image-7.png)
+![alt text](images/image-8.png)
 
 > Aplicando o Método do Cotovelo, observou-se que a inércia diminui acentuadamente de k=1 até k=3. A partir desse ponto, a redução passa a ser bem menor, indicando ganhos marginais ao aumentar o número de grupos.
 >
@@ -131,15 +131,15 @@
 
 ### 3.2 K-Means com Visualização PCA
 
-![Variância preservada: 89.0%](image-8.png)
+![Variância preservada: 89.0%](images/image-9.png)
 
-![alt text](image-9.png)
+![alt text](images/image-10.png)
 
 ---
 
 ### 3.3 Caracterizem cada grupo (qual o grão "médio" de cada cluster?) e proponham uma aplicação real: como uma cooperativa agrícola usaria essa segmentação?
 
-![alt text](image-10.png)
+![alt text](images/image-11.png)
 
 > Os clusters representam diferentes perfis de sementes de trigo:
 > - Um grupo reúne grãos **maiores**, com maior área e perímetro.
@@ -154,7 +154,7 @@
 
 ### 4.1 Treinem uma árvore de decisão e plotem acurácia de treino vs teste para profundidades de 1 a 20 (a "curva do overfitting"). Identifiquem visualmente: onde começa o overfitting?
 
-![Melhor acurácia no teste: 0.786 em profundidade=4](image-11.png)
+![Melhor acurácia no teste: 0.786 em profundidade=4](images/image-12.png)
 
 > A curva mostra o padrão clássico de overfitting:
 > - Nas profundidades baixas, ambas as curvas sobem juntas — o modelo ainda está aprendendo padrões reais.
@@ -165,7 +165,7 @@
 
 ### 4.2 Qual a profundidade ideal? Justifiquem usando validação cruzada, não o olhômetro.
 
-![Melhor profundidade: 2; Acurácia CV (5-fold): 0.753](image-12.png)
+![Melhor profundidade: 2; Acurácia CV (5-fold): 0.753](images/image-13.png)
 
 > Usamos `GridSearchCV` com 5-fold cross-validation para testar sistematicamente todas as profundidades de 1 a 20. A profundidade ideal é aquela que maximiza a acurácia na **validação**, não no treino.
 
