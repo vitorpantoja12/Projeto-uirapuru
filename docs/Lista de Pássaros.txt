@@ -1,0 +1,17 @@
+Lista de Pássaros
+-Uirapuru-da-guiana	 Cyphorhinus arada
+-Guará                   Eudocimus ruber
+-Biguá                   Nannopterum brasilianus
+-Garça-branca-grande     Ardea alba
+-Jaçanã	                 Jacana jacana
+-Quero-quero	         Vanellus chilensis
+-Gavião-caramujeiro      Rostrhamus sociabilis
+-Carrapateiro	         Milvago chimachima
+-Bem-te-vi	         Pitangus sulphuratus
+-Anu-preto	         Crotophaga ani
+-Garça-vaqueira          Bubulcus ibis
+-Martim-pescador-grande	 Megaceryle torquata
+-Socozinho	         Butorides striata
+-Periquito-de-asa-branca Brotogeris versicolurus
+-Marreca-cabocla	 Dendrocygna autumnalis
+
